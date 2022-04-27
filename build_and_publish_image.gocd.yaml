@@ -25,7 +25,7 @@ pipelines:
             elastic_profile_id: demo-app
             artifacts:
             - external:
-                id: k8s-workflow
+                id: bulletin-board
                 store_id: dockerhub
                 configuration:
                   options:
@@ -35,6 +35,6 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - docker build -t alexei2ru/k8s-workflow:$GO_PIPELINE_LABEL . -f Dockerfile
+                - docker build -t alexei2ru/bulletin-board:$GO_PIPELINE_LABEL . -f Dockerfile
                 command: /bin/bash
                 run_if: passed
