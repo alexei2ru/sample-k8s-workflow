@@ -45,6 +45,6 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - docker run "$DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM"
+                - docker run $DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM curl localhost:8080 && exit 0
                 command: /bin/bash
                 run_if: passed
