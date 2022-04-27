@@ -39,6 +39,6 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - docker run $DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM npm test
+                - docker run $DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM
                 command: /bin/bash
                 run_if: passed
