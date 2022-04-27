@@ -3,8 +3,8 @@ FROM openjdk:8-jdk-alpine
 ENV PAYARA_PATH /opt/payara
 
 RUN   apk update \                                                                                                                                                                                                                        
- &&   apk add ca-certificates wget curl \                                                                                                                                                                                                      
- &&   update-ca-certificates && 
+ &&   apk add ca-certificates wget curl                                                                                                                                                                                                     
+RUN   update-ca-certificates 
 RUN mkdir -p $PAYARA_PATH/deployments && \
  adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd && \
  chown -R payara:payara /opt
