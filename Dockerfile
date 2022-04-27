@@ -4,8 +4,8 @@ ENV PAYARA_PATH /opt/payara
 
 RUN   apk update \                                                                                                                                                                                                                        
  &&   apk add ca-certificates wget curl \                                                                                                                                                                                                      
- &&   update-ca-certificates && \
- mkdir -p $PAYARA_PATH/deployments && \
+ &&   update-ca-certificates && 
+RUN mkdir -p $PAYARA_PATH/deployments && \
  adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd && \
  chown -R payara:payara /opt
 
