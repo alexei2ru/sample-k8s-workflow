@@ -39,12 +39,12 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - echo $GO_DEPENDENCY_LABEL_UPSTREAM
+                - echo $GO_DEPENDENCY_LABEL_UPSTREAM "${DOCKERHUB_USERNAME}test"
                 command: /bin/bash
                 run_if: passed
             - exec:
                 arguments:
                 - -c
-                - docker run $DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM
+                - docker run "$DOCKERHUB_USERNAME/bulletin-board:$GO_DEPENDENCY_LABEL_UPSTREAM"
                 command: /bin/bash
                 run_if: passed
