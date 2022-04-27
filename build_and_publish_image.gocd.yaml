@@ -35,6 +35,6 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - docker build -t alexei2ru/bulletin-board:$GO_PIPELINE_LABEL . -f Dockerfile
+                - docker build -t alexei2ru/bulletin-board:$GO_PIPELINE_LABEL . -f Dockerfile.application
                 command: /bin/bash
                 run_if: passed
